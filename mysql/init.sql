@@ -53,8 +53,8 @@ INSERT INTO `users` (`username`, `first_name`, `last_name`, `password`, `salary`
 
 CREATE TABLE IF NOT EXISTS `location_logs` (
     `id` INT AUTO_INCREMENT PRIMARY KEY,
-    `latitude` DECIMAL(10, 2) NOT NULL,
-    `longitude` DECIMAL(11, 2) NOT NULL
+    `latitude` DECIMAL(20, 6) NOT NULL,
+    `longitude` DECIMAL(20, 6) NOT NULL
 ) ;
 
 INSERT INTO `location_logs` (`latitude`, `longitude`) VALUES
