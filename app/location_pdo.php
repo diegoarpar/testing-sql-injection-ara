@@ -22,13 +22,13 @@ try {
 
 <?php
 
-    $user = $_POST['user'];
-    error_log("USERNAME:" . $user);
-    $pass = $_POST['password'];
+    $user = "";
+
+    $pass = "";
     error_log("PASSWORD:" . $pass);
     $stmt = $pdo->prepare("SELECT latitude, longitude From location_logs");
 
-    if ($stmt->execute([$user, $pass])) {
+    if ($stmt->execute([])) {
         echo "<center>";
         echo "<h2>Welcome, " . $user . "</h2><br>";
         echo "<table style='border-radius: 25px; border: 2px solid black;' cellspacing=30>";
