@@ -58,16 +58,30 @@ $conn->close();
     $dbname = $_SERVER["MYSQL_DATABASE"];
     $username = $_SERVER["MYSQL_USER"];
     $password = $_SERVER["MYSQL_PASSWORD"];
+   
+    $dsn = "mysql:host=$host;dbname=$db_name;charset=$charset";
+    $options = [
+        PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+        PDO::ATTR_EMULATE_PREPARES   => false,
+    ];
+    try {
+        $pdo = new PDO($dsn, $username, $password, $options);
+    } catch (\PDOException $e) {
+        throw new \PDOException($e->getMessage(), (int)$e->getCode());
+    }
 
-    $conn = new mysqli($servername, $username, $password, $dbname);
 
     // Check the connection
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
-    $sql = "SELECT latitude, longitude From location_logs";
 
-    if ($conn->query($sql)) {
+    $stmt = $pdo->prepare("SELECT latitude, longitude From location_logs");
+
+
+
+    if ($stmt->execute()) {
         echo "<center>";
         echo "<h2>Welcome, " .  "</h2><br>";
         echo "<table style='border-radius: 25px; border: 2px solid black;' cellspacing=30>";
