@@ -279,9 +279,7 @@ jarsigner -keystore mykey.keystore ./RepackagingLab/dist/RepackagingLab.apk myke
 
     <h2>Log the testing</h2>
     <div class="code-block">
-        <?php
-        adb logcat
-        ?>
+        <pre> adb logcat</pre>
     </div>
 
     <h1>Extra to track the Location</h1>
