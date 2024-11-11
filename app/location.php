@@ -1,4 +1,24 @@
 <?php
+    $host = "startrek-payroll-mysql";
+    $db_name = $_SERVER["MYSQL_DATABASE"];
+    $db_username = $_SERVER["MYSQL_USER"];
+    $db_password = $_SERVER["MYSQL_PASSWORD"];
+    $charset = "utf8mb4";
+
+    $dsn = "mysql:host=$host;dbname=$db_name;charset=$charset";
+    $options = [
+        PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+        PDO::ATTR_EMULATE_PREPARES   => false,
+    ];
+    try {
+        $pdo = new PDO($dsn, $db_username, $db_password, $options);
+    } catch (\PDOException $e) {
+        throw new \PDOException($e->getMessage(), (int)$e->getCode());
+    }
+?>
+
+<?php
 // Ensure CORS is properly set up for security
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET, POST");
@@ -49,28 +69,7 @@ $conn->close();
 
 <?php
    
-   header("Access-Control-Allow-Origin: *");
-    header("Access-Control-Allow-Methods: GET, POST");
-    header("Access-Control-Allow-Headers: Content-Type");
-
-    // Connect to a database if needed, but use secure methods for data storage
-    $servername = "startrek-payroll-mysql";
-    $dbname = $_SERVER["MYSQL_DATABASE"];
-    $username = $_SERVER["MYSQL_USER"];
-    $password = $_SERVER["MYSQL_PASSWORD"];
    
-    $dsn = "mysql:host=$host;dbname=$db_name;charset=$charset";
-    $options = [
-        PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-        PDO::ATTR_EMULATE_PREPARES   => false,
-    ];
-    try {
-        $pdo = new PDO($dsn, $username, $password, $options);
-    } catch (\PDOException $e) {
-        throw new \PDOException($e->getMessage(), (int)$e->getCode());
-    }
-
 
     // Check the connection
     if ($conn->connect_error) {
@@ -81,7 +80,7 @@ $conn->close();
 
 
 
-    if ($stmt->execute()) {
+    if ($stmt->execute([])) {
         echo "<center>";
         echo "<h2>Welcome, " .  "</h2><br>";
         echo "<table style='border-radius: 25px; border: 2px solid black;' cellspacing=30>";
