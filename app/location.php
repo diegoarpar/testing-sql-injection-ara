@@ -48,11 +48,26 @@ $conn->close();
 
 
 <?php
-
    
-    $stmt = $pdo->prepare("SELECT latitude, longitude From location_logs");
+   header("Access-Control-Allow-Origin: *");
+    header("Access-Control-Allow-Methods: GET, POST");
+    header("Access-Control-Allow-Headers: Content-Type");
 
-    if ($stmt->execute()) {
+    // Connect to a database if needed, but use secure methods for data storage
+    $servername = "startrek-payroll-mysql";
+    $dbname = $_SERVER["MYSQL_DATABASE"];
+    $username = $_SERVER["MYSQL_USER"];
+    $password = $_SERVER["MYSQL_PASSWORD"];
+
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    // Check the connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+    $sql = "SELECT latitude, longitude From location_logs";
+
+    if ($conn->query($sql)) {
         echo "<center>";
         echo "<h2>Welcome, " .  "</h2><br>";
         echo "<table style='border-radius: 25px; border: 2px solid black;' cellspacing=30>";
