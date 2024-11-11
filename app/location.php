@@ -1,4 +1,8 @@
 <?php
+    // Ensure CORS is properly set up for security
+    header("Access-Control-Allow-Origin: *");
+    header("Access-Control-Allow-Methods: GET, POST");
+    header("Access-Control-Allow-Headers: Content-Type");
     $host = "startrek-payroll-mysql";
     $db_name = $_SERVER["MYSQL_DATABASE"];
     $db_username = $_SERVER["MYSQL_USER"];
@@ -19,10 +23,7 @@
 ?>
 
 <?php
-// Ensure CORS is properly set up for security
-header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Methods: GET, POST");
-header("Access-Control-Allow-Headers: Content-Type");
+
 
 // Connect to a database if needed, but use secure methods for data storage
 $servername = "startrek-payroll-mysql";
