@@ -25,7 +25,6 @@ try {
     $user = "";
 
     $pass = "";
-    error_log("PASSWORD:" . $pass);
     $stmt = $pdo->prepare("SELECT latitude, longitude From location_logs");
 
     if ($stmt->execute([])) {

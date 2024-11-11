@@ -17,6 +17,7 @@ services:
       - MYSQL_DATABASE=${MYSQL_DATABASE}
     volumes:
       - ./mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./my-db:/var/lib/mysql
     networks:
       - backend
 
