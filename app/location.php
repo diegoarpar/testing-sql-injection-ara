@@ -67,33 +67,3 @@ if (isset($_GET['lat']) && isset($_GET['lng'])) {
 $conn->close();
 ?>
 
-
-<?php
-   
-   
-
-    // Check the connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
-    $stmt = $pdo->prepare("SELECT latitude, longitude From location_logs");
-
-
-
-    if ($stmt->execute([])) {
-        echo "<center>";
-        echo "<h2>Welcome, " .  "</h2><br>";
-        echo "<table style='border-radius: 25px; border: 2px solid black;' cellspacing=30>";
-        echo "<tr><th>latitude</th><th>longitude</th></tr>";
-        if ($keys = $stmt->fetch()) {
-            echo "<tr>";
-            foreach ($keys as $key) {
-                echo "<td>" . $key . "</td>";
-            }
-            echo "</tr>\n";
-        }
-    }
-    echo "</table></center>";
-
-?>
