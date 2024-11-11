@@ -31,7 +31,7 @@ try {
         echo "<center>";
         echo "<h2>Welcome, " . $user . "</h2><br>";
         echo "<table style='border-radius: 25px; border: 2px solid black;' cellspacing=30>";
-        echo "<tr><th>Username</th><th>Salary</th></tr>";
+        echo "<tr><th>latitude</th><th>longitude</th></tr>";
         while ($row = $stmt->fetch()) {
             echo "<tr>";
             echo "<td>" . htmlspecialchars($row['latitude']) . "</td>";
