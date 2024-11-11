@@ -217,16 +217,7 @@ apktool d [appname].apk
         <img src="./pictures/process_6.png" alt="Network Configuration Step 2" width="500" height="400"> 
         <img src="./pictures/process_6_1.png" alt="Network Configuration Step 2" width="500" height="400"> 
         <img src="./pictures/process_7.png" alt="Network Configuration Step 2" width="500" height="400"> 
-        <img src="./pictures/process_8.png" alt="Network Configuration Step 2" width="500" height="400"> 
-        <img src="./pictures/process_9.png" alt="Network Configuration Step 2" width="500" height="400"> 
-        <img src="./pictures/process_10.png" alt="Network Configuration Step 2" width="500" height="400"> 
-        <img src="./pictures/process_11.png" alt="Network Configuration Step 2" width="500" height="400"> 
-        <img src="./pictures/process_12.png" alt="Network Configuration Step 2" width="500" height="400"> 
-        <img src="./pictures/process_13.png" alt="Network Configuration Step 2" width="500" height="400"> 
-        <img src="./pictures/process_14.png" alt="Network Configuration Step 2" width="500" height="400"> 
-        <img src="./pictures/process_15.png" alt="Network Configuration Step 2" width="500" height="400"> 
-        <img src="./pictures/process_16.png" alt="Network Configuration Step 2" width="500" height="400"> 
-        <img src="./pictures/process_17.png" alt="Network Configuration Step 2" width="500" height="400"> 
+        
     </div>
 
     <h1>Change Manifest</h1>
@@ -280,13 +271,14 @@ jarsigner -keystore mykey.keystore ./RepackagingLab/dist/RepackagingLab.apk myke
 
     <h2>Uninstall, Install and Testing</h2>
     <div class="code-block">
-        <?php
-        // List of Uninstall, Install and Testing images
-        for ($i = 11; $i <= 15; $i++) {
-            echo '<img src="./pictures/process_' . $i . '.png" alt="Uninstall Install Testing Step ' . $i . '" width="500" height="400">' . "\n        ";
-        }
-
-        ?>
+    
+        <img src="./pictures/process_11.png" alt="Network Configuration Step 2" width="500" height="400"> 
+        <img src="./pictures/process_12.png" alt="Network Configuration Step 2" width="500" height="400"> 
+        <img src="./pictures/process_13.png" alt="Network Configuration Step 2" width="500" height="400"> 
+        <img src="./pictures/process_14.png" alt="Network Configuration Step 2" width="500" height="400"> 
+        <img src="./pictures/process_15.png" alt="Network Configuration Step 2" width="500" height="400"> 
+        <img src="./pictures/process_16.png" alt="Network Configuration Step 2" width="500" height="400"> 
+        <img src="./pictures/process_17.png" alt="Network Configuration Step 2" width="500" height="400"> 
     </div>
 
     <h2>Log the testing</h2>
