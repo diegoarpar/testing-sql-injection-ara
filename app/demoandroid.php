@@ -273,9 +273,16 @@ jarsigner -keystore mykey.keystore ./RepackagingLab/dist/RepackagingLab.apk myke
         for ($i = 11; $i <= 15; $i++) {
             echo '<img src="./pictures/process_' . $i . '.png" alt="Uninstall Install Testing Step ' . $i . '" width="500" height="400">' . "\n        ";
         }
+
         ?>
     </div>
 
+    <h2>Log the testing</h2>
+    <div class="code-block">
+        <?php
+        adb logcat
+        ?>
+    </div>
 
     <h1>Extra to track the Location</h1>
 
