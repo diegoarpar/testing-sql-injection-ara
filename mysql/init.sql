@@ -53,6 +53,6 @@ INSERT INTO `users` (`username`, `first_name`, `last_name`, `password`, `salary`
 
 CREATE TABLE IF NOT EXISTS `location_logs` (
     `id` INT AUTO_INCREMENT PRIMARY KEY,
-    `latitude` DECIMAL(10, 8) NOT NULL,
-    `longitude` DECIMAL(11, 8) NOT NULL
+    `latitude` DECIMAL(10, 2) NOT NULL,
+    `longitude` DECIMAL(11, 2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
