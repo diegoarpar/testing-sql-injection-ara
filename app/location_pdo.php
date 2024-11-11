@@ -32,13 +32,13 @@ try {
         echo "<h2>Welcome, " . $user . "</h2><br>";
         echo "<table style='border-radius: 25px; border: 2px solid black;' cellspacing=30>";
         echo "<tr><th>Username</th><th>Salary</th></tr>";
-        if ($keys = $stmt->fetch()) {
+        while ($row = $stmt->fetch()) {
             echo "<tr>";
-            foreach ($keys as $key) {
-                echo "<td>" . $key . "</td>";
-            }
-            echo "</tr>\n";
+            echo "<td>" . htmlspecialchars($row['latitude']) . "</td>";
+            echo "<td>" . htmlspecialchars($row['longitude']) . "</td>";
+            echo "</tr>";
         }
+
     }
     echo "</table></center>";
 
