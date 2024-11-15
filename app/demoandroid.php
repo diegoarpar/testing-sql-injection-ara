@@ -279,6 +279,14 @@ jarsigner -keystore mykey.keystore ./RepackagingLab/dist/RepackagingLab.apk myke
         <img src="./pictures/process_15.png" alt="Network Configuration Step 2" width="500" height="400"> 
         <img src="./pictures/process_16.png" alt="Network Configuration Step 2" width="500" height="400"> 
         <img src="./pictures/process_17.png" alt="Network Configuration Step 2" width="500" height="400"> 
+        <img src="./pictures/process_18.png" alt="Network Configuration Step 2" width="500" height="400"> 
+        <img src="./pictures/process_19.png" alt="Network Configuration Step 2" width="500" height="400"> 
+        <img src="./pictures/process_20.png" alt="Network Configuration Step 2" width="500" height="400"> 
+        <img src="./pictures/process_21.png" alt="Network Configuration Step 2" width="500" height="400"> 
+        <img src="./pictures/process_22.png" alt="Network Configuration Step 2" width="500" height="400"> 
+        <img src="./pictures/process_23.png" alt="Network Configuration Step 2" width="500" height="400"> 
+        <img src="./pictures/process_24.png" alt="Network Configuration Step 2" width="500" height="400"> 
+        <img src="./pictures/process_25.png" alt="Network Configuration Step 2" width="500" height="400"> 
     </div>
 
     <h2>Log the testing</h2>
